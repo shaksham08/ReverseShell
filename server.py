@@ -11,7 +11,7 @@ def create_socket():
         global s           # Here s is for socket
         host = ''          # here we will write the ip address of host
         port = 9999        # A very uncommon port so we can use this
-        s = socket.socket  # creating a socket
+        s = socket.socket()  # creating a socket
     except socket.error as msg:
         print("Socket creation error " + str(msg))
 
@@ -65,9 +65,11 @@ def send_command(conn):
             # utf-8 stands encoding type
             print(client_response, end="")
 
+
 def main():
     create_socket()
     bind_socket()
     socket_accept()
+
 
 main()
