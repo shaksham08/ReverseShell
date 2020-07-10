@@ -40,7 +40,7 @@ def bind_socket():
 def socket_accept():
     conn, address = s.accept()  # This s.accept returns 2 data , 1st is the object of the connection i.e the conversation and the 2nd is the list which contain the ip address and the port
     print("Connection has been established |" + " IP : " +
-          address[0] + "| PORT :" + int(address[1]))
+          address[0] + "| PORT :" + str(address[1]))
     send_command(conn)
     conn.close()  # this will close the connection
 
